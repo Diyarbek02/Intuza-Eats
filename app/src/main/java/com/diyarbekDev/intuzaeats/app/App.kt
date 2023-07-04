@@ -1,4 +1,4 @@
-package com.karsoft.newcastletest.app
+package com.diyarbekDev.intuzaeats.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

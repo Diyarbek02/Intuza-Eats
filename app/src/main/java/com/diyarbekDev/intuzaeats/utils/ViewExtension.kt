@@ -1,4 +1,4 @@
-package com.karsoft.newcastletest.utils
+package com.diyarbekDev.intuzaeats.utils
 
 import android.content.Context
 import android.graphics.*
@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.karsoft.newcastletest.R
+import com.diyarbekDev.intuzaeats.R
 
 fun View.hide() {
     this.visibility = View.GONE

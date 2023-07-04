@@ -1,4 +1,4 @@
-package com.karsoft.newcastletest.utils
+package com.diyarbekDev.intuzaeats.utils
 
 import android.content.SharedPreferences
 import androidx.core.content.edit

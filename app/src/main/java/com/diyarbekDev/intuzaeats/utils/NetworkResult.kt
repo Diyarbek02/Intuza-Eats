@@ -1,4 +1,4 @@
-package com.karsoft.newcastletest.utils
+package com.diyarbekDev.intuzaeats.utils
 
 sealed class NetworkResult<T>(val data: T? = null, val message: String? = null) {
 
