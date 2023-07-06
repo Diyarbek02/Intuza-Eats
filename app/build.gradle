@@ -102,5 +102,11 @@ dependencies {
      * */
     implementation 'com.github.bumptech.glide:glide:4.13.2'
 
+    // Shimmer Effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    // Smooth BottomBar
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+
 
 }
