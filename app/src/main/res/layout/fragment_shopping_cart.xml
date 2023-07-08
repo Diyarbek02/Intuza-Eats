@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/splash_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_custom"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shopping cart"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/img1"
+        android:layout_marginTop="18sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtotal:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_order"
+        app:layout_constraintStart_toStartOf="@id/btn_order"
+        android:layout_marginBottom="20dp"
+        />
+    
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$75.00"
+        app:layout_constraintStart_toEndOf="@id/tv_total"
+        app:layout_constraintTop_toTopOf="@id/tv_total"
+        app:layout_constraintBottom_toBottomOf="@id/tv_total"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        tools:itemCount="4"
+        app:layout_constraintBottom_toTopOf="@id/tv_total"
+        app:layout_constraintTop_toBottomOf="@id/tvv_title"
+        tools:listitem="@layout/item_selected_food" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

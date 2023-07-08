@@ -1,4 +1,4 @@
-package com.diyarbekDev.intuzaeats.ui
+package com.diyarbekDev.intuzaeats.ui.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,14 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.view.WindowManager
-import com.diyarbekDev.intuzaeats.MainActivity
 import com.diyarbekDev.intuzaeats.R
-import com.diyarbekDev.intuzaeats.databinding.ActivitySplashBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {

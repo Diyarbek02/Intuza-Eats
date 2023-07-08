@@ -8,6 +8,11 @@
     <fragment
         android:id="@+id/menuFragment2"
         tools:layout="@layout/fragment_menu"
-        android:name="com.diyarbekDev.intuzaeats.ui.MenuFragment"
+        android:name="com.diyarbekDev.intuzaeats.ui.Fragments.MenuFragment"
         android:label="MenuFragment" />
+    <fragment
+        android:id="@+id/shoppingCartFragment2"
+        tools:layout="@layout/fragment_shopping_cart"
+        android:name="com.diyarbekDev.intuzaeats.ui.Fragments.ShoppingCartFragment"
+        android:label="ShoppingCartFragment" />
 </navigation>

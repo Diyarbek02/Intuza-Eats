@@ -1,4 +1,4 @@
-package com.diyarbekDev.intuzaeats
+package com.diyarbekDev.intuzaeats.ui.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
