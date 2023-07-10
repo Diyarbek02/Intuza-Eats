@@ -6,28 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/white_background">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/btnmenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/menu"
-        app:layout_constraintBottom_toBottomOf="@id/img1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/img1" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/btncart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/bag_2"
-        app:layout_constraintBottom_toBottomOf="@id/img1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/img1" />
-
     <ImageView
         android:id="@+id/img1"
         android:layout_width="0dp"

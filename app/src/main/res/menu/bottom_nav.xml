@@ -7,7 +7,7 @@
         />
     <item
         android:id="@+id/menuFragment"
-        android:icon="@drawable/menu"
+        android:icon="@drawable/fast_food"
         android:title="Menu"
         />
     <item
@@ -17,8 +17,14 @@
         />
     <item
         android:id="@+id/aboutUsFragment"
-        android:icon="@drawable/home"
+        android:icon="@drawable/info_circle"
         android:title="About Us"
         />
+    <item
+        android:id="@+id/reviewFragment"
+        android:icon="@drawable/icon_profile"
+        android:title="Review"
+        />
+
 
 </menu>

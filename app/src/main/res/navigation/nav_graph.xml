@@ -3,16 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/menuFragment2">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/menuFragment2"
+        android:id="@+id/homeFragment"
+        android:name="com.diyarbekDev.intuzaeats.ui.Fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/menuFragment"
         tools:layout="@layout/fragment_menu"
         android:name="com.diyarbekDev.intuzaeats.ui.Fragments.MenuFragment"
-        android:label="MenuFragment" />
+        android:label="fragment_menu" />
     <fragment
-        android:id="@+id/shoppingCartFragment2"
+        android:id="@+id/shoppingCartFragment"
         tools:layout="@layout/fragment_shopping_cart"
         android:name="com.diyarbekDev.intuzaeats.ui.Fragments.ShoppingCartFragment"
-        android:label="ShoppingCartFragment" />
+        android:label="fragment_shopping_cart" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.diyarbekDev.intuzaeats.ui.Fragments.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.diyarbekDev.intuzaeats.ui.Fragments.ReviewFragment"
+        android:label="fragment_review"
+        tools:layout="@layout/fragment_review" />
+
 </navigation>

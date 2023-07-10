@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
 import com.diyarbekDev.intuzaeats.R
 
 fun View.hide() {
@@ -37,9 +36,6 @@ fun TextView.underline() {
 
 fun showSnackbar(string: String){
 
-}
-fun ImageView.setImageWithGlide(context: Context, path: String) {
-    Glide.with(context).load("https://intuza.karsoft.uz/public/images/$path").placeholder(R.drawable.ic_launcher_background).into(this)
 }
 
 fun ViewPager2.autoScroll(interval: Long) {
