@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:layout_marginStart="2dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img_food"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:src="@drawable/cat_img"
+        android:translationZ="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:layout_marginTop="40dp"
         android:layout_width="170dp"
         android:layout_height="230dp"
         app:cardBackgroundColor="@color/white"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="12dp"
         app:cardCornerRadius="13dp"
-        app:cardElevation="1dp">
+        android:layout_marginBottom="2dp"
+        app:cardElevation="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-
-            <ImageView
-                android:id="@+id/img_food"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginTop="-20dp"
-                android:layout_marginRight="-20dp"
-                android:src="@drawable/cat_img"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_food_name"
@@ -38,50 +43,50 @@
                 android:maxLines="2"
                 android:padding="8dp"
                 android:text="Salad"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_food"
-                />
-            
+                app:layout_constraintTop_toTopOf="parent"
+               />
+
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tomatoes, meat, salad leaves, cucumbers, eggs, peas, green onions, cauliflower."
-                android:textAlignment="center"
-                app:layout_constraintTop_toBottomOf="@id/tv_food_name"
-                android:textSize="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                />
+                android:lines="3"
+                android:text="Tomatoes, meat, salad leaves, cucumbers, eggs, peas, green onions, cauliflower."
+                android:textAlignment="center"
+                android:textSize="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_name" />
 
             <TextView
+                android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$10.00"
                 android:layout_marginStart="12dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="12dp"
+                android:text="$10.00"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textSize="16sp"
-                />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@drawable/bag_2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="12dp"
-                />
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/bag_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

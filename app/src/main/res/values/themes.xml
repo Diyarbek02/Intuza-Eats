@@ -3,7 +3,23 @@
     <style name="Base.Theme.IntuzaEats" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/my_yellow</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">@color/white</item>
     </style>
 
     <style name="Theme.IntuzaEats" parent="Base.Theme.IntuzaEats" />
+    <style name="ToggleButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+    <style name="CameraCutout" parent="Base.Theme.IntuzaEats">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
 </resources>

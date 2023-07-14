@@ -3,23 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
+        android:name=".app.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IntuzaEats"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.Activities.SplashActivity"
+            android:name=".ui.Activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Activities.MainActivity"
-            android:exported="true">
+            android:name=".ui.Activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/CameraCutout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

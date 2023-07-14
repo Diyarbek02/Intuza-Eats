@@ -1,90 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.Fragments.HomeFragment"
-    android:background="@color/white_background">
-
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/splash_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="@color/white_background"
+    tools:context=".ui.Fragments.HomeFragment">
 
     <TextView
         android:id="@+id/tvMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="12dp"
+        android:drawableStart="@drawable/baseline_location_on_24"
+        android:drawablePadding="8dp"
         android:text="Nukus"
+        android:textColor="@color/my_yellow"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img1"
-        android:textColor="@color/my_yellow"
-        android:drawablePadding="8dp"
-        android:drawableStart="@drawable/baseline_location_on_24"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_online_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Online Menu"
         android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMenu"
-        android:layout_marginTop="8dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMenu" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_online_menu"
-        android:text="Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu"
-        android:gravity="center"
         android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:textSize="16sp"
         android:layout_marginTop="10dp"
-            />
+        android:layout_marginEnd="60dp"
+        android:gravity="center"
+        android:text="Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_online_menu" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_view_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Menu"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_custom_shapeable"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        android:paddingStart="22dp"
-        android:paddingEnd="22dp"
-        android:layout_marginTop="18dp"
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:id="@+id/btn_view_menu"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="View Menu"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:background="@drawable/btn_custom_shapeable"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:paddingStart="22dp"-->
+    <!--        android:paddingEnd="22dp"-->
+    <!--        android:layout_marginTop="18dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_title"-->
+    <!--        />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_food"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:spanCount="2"
+        android:visibility="gone"
+        tools:listitem="@layout/item_food" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
-        />
+        android:visibility="visible" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btn_view_menu"
-        tools:listitem="@layout/item_food"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="18dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp">
 
-        />
+            <include layout="@layout/placeholder" />
+
+            <include layout="@layout/placeholder" />
+
+            <include layout="@layout/placeholder" />
+
+            <include layout="@layout/placeholder" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

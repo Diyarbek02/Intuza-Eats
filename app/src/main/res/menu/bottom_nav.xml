@@ -21,9 +21,9 @@
         android:title="About Us"
         />
     <item
-        android:id="@+id/reviewFragment"
+        android:id="@+id/contactFragment"
         android:icon="@drawable/icon_profile"
-        android:title="Review"
+        android:title="Contact"
         />
 
 

@@ -6,14 +6,5 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Fragments.ReviewFragment">
 
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/splash_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
