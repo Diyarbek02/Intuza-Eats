@@ -2,6 +2,7 @@ package com.diyarbekDev.intuzaeats.ui.Fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -46,6 +47,10 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
     private fun initObservers() {
         viewModel.getMenuSuccessFlow.onEach {
+            viewBinding.apply {
+                shimmerLayoutMenu.isVisible = false
+                rvMenu.isVisible = true
+            }
             adapter.submitList(it)
             val temp = mutableListOf<String>()
             it.forEach { data->
@@ -54,7 +59,10 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         }.launchIn(lifecycleScope)
 
         viewModel.getFoodSuccessFlow.onEach {
-            visibilityProgressBar.emit(false)
+            viewBinding.apply {
+                shimmerLayoutFood.isVisible = false
+                rvFood.isVisible = true
+            }
             adapter2.submitList(it)
             val temp2 = mutableListOf<String>()
             it.forEach { data->

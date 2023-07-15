@@ -3,6 +3,7 @@ package com.diyarbekDev.intuzaeats.ui.Fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -45,7 +46,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun initObservers() {
         viewModel.getFoodSuccessFlow.onEach {
-            visibilityProgressBar.emit(false)
+            viewBinding.shimmerLayout.isVisible = false
+            viewBinding.rvFood.isVisible = true
             adapter.submitList(it)
             val temp = mutableListOf<String>()
             it.forEach { data->

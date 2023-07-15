@@ -33,12 +33,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initObservers(){
-        visibilityProgressBar.onEach {
-            if (it){
-                binding.progressBar.visibility = View.VISIBLE
-            }else {
-                binding.progressBar.visibility = View.GONE
-            }
-        }.launchIn(lifecycleScope)
+
     }
 }
