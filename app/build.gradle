@@ -122,4 +122,8 @@ dependencies {
 
     // Shimmer Effect
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Collapsing toolbar
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:29.0.0'
 }

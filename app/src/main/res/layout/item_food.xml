@@ -75,14 +75,24 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+            <LinearLayout
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_marginEnd="12dp"
+                android:background="@drawable/bgr_circle"
                 android:layout_marginBottom="12dp"
-                android:src="@drawable/bag_2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bag_white"
+                    android:layout_margin="5dp"
+                    />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

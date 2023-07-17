@@ -71,6 +71,7 @@
         app:layout_constraintTop_toTopOf="@id/countoffood" />
 
     <TextView
+        android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$10.00"

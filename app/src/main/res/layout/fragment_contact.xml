@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="@id/tv1"
         android:text="+99890 123 45 67"
         app:layout_constraintTop_toBottomOf="@id/tv1"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="32dp"
         android:drawableTop="@drawable/call"
         android:drawablePadding="8dp"
         />
