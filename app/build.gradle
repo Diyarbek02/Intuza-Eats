@@ -80,7 +80,7 @@ dependencies {
 
     /
      * Corbind
-     * */
+ * */
     implementation 'ru.ldralighieri.corbind:corbind:1.5.4'
     implementation 'ru.ldralighieri.corbind:corbind-material:1.5.4'
     implementation 'ru.ldralighieri.corbind:corbind-swiperefreshlayout:1.5.4'
@@ -123,7 +123,4 @@ dependencies {
     // Shimmer Effect
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
-    //Collapsing toolbar
-    //noinspection GradleCompatible
-    implementation 'com.android.support:design:29.0.0'
 }
