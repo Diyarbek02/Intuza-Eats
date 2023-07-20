@@ -2,6 +2,7 @@ package com.diyarbekDev.intuzaeats.ui.Fragments
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -28,7 +29,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     lateinit var localStorage: LocalStorage
     private val viewBinding: FragmentMenuBinding by viewBinding(FragmentMenuBinding::bind)
     private val navController by lazy(LazyThreadSafetyMode.NONE) { findNavController() }
-    private val viewModel: HomeFragmentViewModel by  viewModels<HomeFragmentViewModelImpl>()
+    private val viewModel: HomeFragmentViewModel by viewModels<HomeFragmentViewModelImpl>()
 
     private var _adapter: ItemMenuAdapter? = null
     private var _adapter2: ItemFoodAdapter? = null
@@ -40,9 +41,9 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             viewModel.getMenu()
             viewModel.getFood()
         }
+        initAdapters()
         initListeners()
         initObservers()
-        initAdapters()
     }
 
     private fun initObservers() {
@@ -53,7 +54,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             }
             adapter.submitList(it)
             val temp = mutableListOf<String>()
-            it.forEach { data->
+            it.forEach { data ->
                 temp.add(data.image)
             }
         }.launchIn(lifecycleScope)
@@ -65,15 +66,18 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             }
             adapter2.submitList(it)
             val temp2 = mutableListOf<String>()
-            it.forEach { data->
+            it.forEach { data ->
                 temp2.add(data.image)
             }
         }.launchIn(lifecycleScope)
     }
 
     private fun initListeners() {
-
-
+        adapter.setOnItemClickListener {
+            // Send request to server to get specific type of food
+            // recyclerview giving us id of clicked item
+            Toast.makeText(requireContext(), "id: $it item clicked", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initAdapters() {
@@ -81,7 +85,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         _adapter2 = ItemFoodAdapter()
         viewBinding.rvMenu.adapter = adapter
         viewBinding.rvFood.adapter = adapter2
-
     }
 
     override fun onDestroyView() {
