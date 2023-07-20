@@ -41,8 +41,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             viewModel.getFood()
         }
         initListeners()
-        initObservers()
         initAdapters()
+        initObservers()
     }
 
     private fun initObservers() {

@@ -59,7 +59,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             }
         }.launchIn(lifecycleScope)
 
-        viewModel.getFoodSuccessFlow.onEach {
+        viewModel.filterFoodByCategory.onEach {
             viewBinding.apply {
                 shimmerLayoutFood.isVisible = false
                 rvFood.isVisible = true
@@ -74,9 +74,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
     private fun initListeners() {
         adapter.setOnItemClickListener {
-            // Send request to server to get specific type of food
-            // recyclerview giving us id of clicked item
-            Toast.makeText(requireContext(), "id: $it item clicked", Toast.LENGTH_SHORT).show()
+            viewModel.getFilteredFood(it)
         }
     }
 
