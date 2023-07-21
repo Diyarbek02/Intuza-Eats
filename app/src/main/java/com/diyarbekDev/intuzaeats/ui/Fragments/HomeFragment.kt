@@ -46,8 +46,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun initObservers() {
         viewModel.getFoodSuccessFlow.onEach {
-            viewBinding.shimmerLayout.isVisible = false
-            viewBinding.rvFood.isVisible = true
+//            viewBinding.shimmerLayout.isVisible = false
+//            viewBinding.rvFood.isVisible = true
             adapter.submitList(it)
             val temp = mutableListOf<String>()
             it.forEach { data->

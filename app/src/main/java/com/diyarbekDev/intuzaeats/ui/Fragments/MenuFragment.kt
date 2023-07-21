@@ -48,8 +48,8 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     private fun initObservers() {
         viewModel.getMenuSuccessFlow.onEach {
             viewBinding.apply {
-                shimmerLayoutMenu.isVisible = false
-                rvMenu.isVisible = true
+//                shimmerLayoutMenu.isVisible = false
+//                rvMenu.isVisible = true
             }
             adapter.submitList(it)
             val temp = mutableListOf<String>()
@@ -60,8 +60,8 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
         viewModel.filterFoodByCategory.onEach {
             viewBinding.apply {
-                shimmerLayoutFood.isVisible = false
-                rvFood.isVisible = true
+//                shimmerLayoutFood.isVisible = false
+//                rvFood.isVisible = true
             }
             adapter2.submitList(it)
             val temp2 = mutableListOf<String>()
