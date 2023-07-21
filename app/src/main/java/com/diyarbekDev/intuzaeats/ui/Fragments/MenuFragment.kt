@@ -28,7 +28,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     lateinit var localStorage: LocalStorage
     private val viewBinding: FragmentMenuBinding by viewBinding(FragmentMenuBinding::bind)
     private val navController by lazy(LazyThreadSafetyMode.NONE) { findNavController() }
-    private val viewModel: HomeFragmentViewModel by  viewModels<HomeFragmentViewModelImpl>()
+    private val viewModel: HomeFragmentViewModel by viewModels<HomeFragmentViewModelImpl>()
 
     private var _adapter: ItemMenuAdapter? = null
     private var _adapter2: ItemFoodAdapter? = null
@@ -40,9 +40,9 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             viewModel.getMenu()
             viewModel.getFood()
         }
+        initAdapters()
         initListeners()
         initObservers()
-        initAdapters()
     }
 
     private fun initObservers() {
@@ -53,27 +53,28 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             }
             adapter.submitList(it)
             val temp = mutableListOf<String>()
-            it.forEach { data->
+            it.forEach { data ->
                 temp.add(data.image)
             }
         }.launchIn(lifecycleScope)
 
-        viewModel.getFoodSuccessFlow.onEach {
+        viewModel.filterFoodByCategory.onEach {
             viewBinding.apply {
                 shimmerLayoutFood.isVisible = false
                 rvFood.isVisible = true
             }
             adapter2.submitList(it)
             val temp2 = mutableListOf<String>()
-            it.forEach { data->
+            it.forEach { data ->
                 temp2.add(data.image)
             }
         }.launchIn(lifecycleScope)
     }
 
     private fun initListeners() {
-
-
+        adapter.setOnItemClickListener {
+            viewModel.getFilteredFood(it)
+        }
     }
 
     private fun initAdapters() {
@@ -81,7 +82,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         _adapter2 = ItemFoodAdapter()
         viewBinding.rvMenu.adapter = adapter
         viewBinding.rvFood.adapter = adapter2
-
     }
 
     override fun onDestroyView() {

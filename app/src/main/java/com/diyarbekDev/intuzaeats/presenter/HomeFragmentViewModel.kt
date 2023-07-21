@@ -10,4 +10,7 @@ interface HomeFragmentViewModel {
 
     val getMenuSuccessFlow: Flow<List<MenuData>>
     suspend fun getMenu()
+
+    val filterFoodByCategory: Flow<List<FoodData>>
+    fun getFilteredFood(categoryId: Int)
 }
