@@ -65,4 +65,9 @@ class ItemFoodAdapter :
             oldItem: FoodData, newItem: FoodData
         ): Boolean = oldItem.id == newItem.id
     }
+
+    private var onClick: (food: FoodData) -> Unit = {}
+    fun setOnClick(onClick: (food: FoodData) -> Unit) {
+        this.onClick = onClick
+    }
 }

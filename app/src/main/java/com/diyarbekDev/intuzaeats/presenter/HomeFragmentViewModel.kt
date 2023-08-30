@@ -13,4 +13,7 @@ interface HomeFragmentViewModel {
 
     val filterFoodByCategory: Flow<List<FoodData>>
     fun getFilteredFood(categoryId: Int)
+
+    val selectedFoods: Flow<List<FoodData>>
+    fun getSelectedFood()
 }

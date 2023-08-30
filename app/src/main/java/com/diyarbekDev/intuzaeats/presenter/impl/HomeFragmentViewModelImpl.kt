@@ -26,6 +26,8 @@ class HomeFragmentViewModelImpl @Inject constructor(
 
     override val filterFoodByCategory = MutableStateFlow<List<FoodData>>(emptyList())
 
+    override val selectedFoods = MutableStateFlow<List<FoodData>>(emptyList())
+
 
     override suspend fun getMenu() {
         repository.getMenu().onEach {
@@ -63,6 +65,12 @@ class HomeFragmentViewModelImpl @Inject constructor(
     override fun getFilteredFood(categoryId: Int) {
         viewModelScope.launch {
             filterFoodByCategory.emit(getFoodSuccessFlow.value.filter { it.category ==  categoryId})
+        }
+    }
+
+    override fun getSelectedFood() {
+        viewModelScope.launch {
+
         }
     }
 }

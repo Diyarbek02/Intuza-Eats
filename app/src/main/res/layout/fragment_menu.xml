@@ -6,119 +6,105 @@
     android:layout_height="match_parent"
     android:background="@color/white_background">
 
-    <ScrollView
+
+    <TextView
+        android:id="@+id/tvMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Menu"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tvMenu"
+        tools:listitem="@layout/item_menu" />
 
-            <TextView
-                android:id="@+id/tvMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="Menu"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+    <!--            <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                android:id="@+id/shimmerLayoutMenu"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                android:layout_marginTop="18dp"-->
+    <!--                android:layout_marginStart="12dp"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/tvMenu"-->
+    <!--                >-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_menu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="18dp"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/tvMenu"
-                tools:listitem="@layout/item_menu" />
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="horizontal"-->
+    <!--                    >-->
 
-<!--            <com.facebook.shimmer.ShimmerFrameLayout-->
-<!--                android:id="@+id/shimmerLayoutMenu"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                android:layout_marginTop="18dp"-->
-<!--                android:layout_marginStart="12dp"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/tvMenu"-->
-<!--                >-->
+    <!--                    <include layout="@layout/placeholder_menu" />-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    >-->
+    <!--                    <include layout="@layout/placeholder_menu" />-->
 
-<!--                    <include layout="@layout/placeholder_menu" />-->
+    <!--                    <include layout="@layout/placeholder_menu" />-->
 
-<!--                    <include layout="@layout/placeholder_menu" />-->
+    <!--                    <include layout="@layout/placeholder_menu" />-->
 
-<!--                    <include layout="@layout/placeholder_menu" />-->
+    <!--                    <include layout="@layout/placeholder_menu" />-->
 
-<!--                    <include layout="@layout/placeholder_menu" />-->
-
-<!--                    <include layout="@layout/placeholder_menu" />-->
-
-<!--                    <include layout="@layout/placeholder_menu" />-->
+    <!--                    <include layout="@layout/placeholder_menu" />-->
 
 
-<!--                </LinearLayout>-->
+    <!--                </LinearLayout>-->
 
-<!--            </com.facebook.shimmer.ShimmerFrameLayout>-->
+    <!--            </com.facebook.shimmer.ShimmerFrameLayout>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_food"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="14dp"
-                android:layout_marginTop="20dp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/rv_menu"
-                app:spanCount="2"
-                tools:listitem="@layout/item_food" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_food"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="14dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/rv_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:spanCount="2"
+        tools:listitem="@layout/item_food" />
 
-<!--            <com.facebook.shimmer.ShimmerFrameLayout-->
-<!--                android:id="@+id/shimmerLayoutFood"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="52dp"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/shimmerLayoutMenu"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                android:visibility="visible" >-->
+    <!--            <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                android:id="@+id/shimmerLayoutFood"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="52dp"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/shimmerLayoutMenu"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                android:visibility="visible" >-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:padding="6dp">-->
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    android:padding="6dp">-->
 
-<!--                    <include layout="@layout/placeholder" />-->
+    <!--                    <include layout="@layout/placeholder" />-->
 
-<!--                    <include layout="@layout/placeholder" />-->
+    <!--                    <include layout="@layout/placeholder" />-->
 
-<!--                    <include layout="@layout/placeholder" />-->
+    <!--                    <include layout="@layout/placeholder" />-->
 
-<!--                    <include layout="@layout/placeholder" />-->
+    <!--                    <include layout="@layout/placeholder" />-->
 
-<!--                </LinearLayout>-->
+    <!--                </LinearLayout>-->
 
-<!--            </com.facebook.shimmer.ShimmerFrameLayout>-->
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
+    <!--            </com.facebook.shimmer.ShimmerFrameLayout>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

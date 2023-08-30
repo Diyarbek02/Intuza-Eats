@@ -10,9 +10,9 @@ import retrofit2.http.Headers
 interface EatsApi {
     @Headers("Content-Type:application/json")
     @GET("/api/v1/menu/")
-    suspend fun getMenu(): Response<List<MenuData>>
+    suspend fun getMenu(@Header("Authorization") token: String): Response<List<MenuData>>
 
     @Headers("Content-Type:application/json")
     @GET("/api/v1/foods/")
-    suspend fun getFood(): Response<List<FoodData>>
+    suspend fun getFood(@Header("Authorization") token: String): Response<List<FoodData>>
 }

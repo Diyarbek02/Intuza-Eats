@@ -3,6 +3,7 @@ package com.diyarbekDev.intuzaeats.data.local
 import android.content.Context
 import android.content.SharedPreferences
 import com.diyarbekDev.intuzaeats.app.App
+import com.diyarbekDev.intuzaeats.utils.StringPreference
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -16,6 +17,7 @@ class LocalStorage @Inject constructor(
             App.instance.getSharedPreferences("localStorage", Context.MODE_PRIVATE)
     }
 
+    var token by StringPreference(pref)
 
 
 }

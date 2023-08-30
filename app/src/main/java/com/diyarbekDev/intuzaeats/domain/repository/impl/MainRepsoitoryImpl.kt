@@ -20,7 +20,7 @@ class MainRepsoitoryImpl @Inject constructor(
 ) : MainRepository {
 
     override fun getMenu() = flow {
-        val request = api.getMenu()
+        val request = api.getMenu("Token a77c6884ea0f2e1524640a0ca8ff920fa8442657")
         if (request.isSuccessful) {
             emit(ResultData.Success(request.body()!!))
         }else {
@@ -33,7 +33,7 @@ class MainRepsoitoryImpl @Inject constructor(
 
 
     override fun getFood() = flow {
-        val request = api.getFood()
+        val request = api.getFood("Token a77c6884ea0f2e1524640a0ca8ff920fa8442657")
         if (request.isSuccessful) {
             emit(ResultData.Success(request.body()!!))
         }else {

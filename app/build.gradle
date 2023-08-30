@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -41,6 +42,8 @@ android {
 }
 
 dependencies {
+    def room_version = "2.4.3"
+
     implementation 'androidx.work:work-runtime-ktx:2.7.1'
 
 
@@ -61,6 +64,7 @@ dependencies {
         coroutines_version = "1.6.4"
         lifecycle_version = "2.5.1"
         koin_android_version = "3.3.0"
+
     }
     /
      * Retrofit*/
@@ -92,6 +96,8 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
 
+    //Coroutine
+    implementation 'androidx.room:room-ktx:2.4.3'
     /
      * dagger hilt
      * */
@@ -122,5 +128,9 @@ dependencies {
 
     // Shimmer Effect
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
 }
